@@ -9,6 +9,7 @@ var linkRoutes = require('./routes/link');
 var config = require('./config');
 
 var port = 3000;
+mongoose.Promise = global.Promise;
 mongoose.connect(config.database);
 
 app.use(bodyParser.urlencoded({ extended: false}));

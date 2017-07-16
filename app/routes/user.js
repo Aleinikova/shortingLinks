@@ -18,7 +18,7 @@ userRoutes.post('/auth', function(req, res) {
         res.json({ success: false, message: 'Authentication failed. Wrong password' })
       } else {
         var token = jwt.sign(user, config.secret, {
-          expiresIn: 1440
+          expiresIn: 1440 * 60 * 60
         });
         res.json({
           success: true,
